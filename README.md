@@ -29,12 +29,12 @@ English
 2. Open termux and paste command
 
 ```bash
-curl -s -o ~/x https://raw.githubusercontent.com/aldvn/mobox/refs/heads/main/install && . ~/x
+curl -s -o ~/x https://raw.githubusercontent.com/alexdvn/mobox/refs/heads/main/install && . ~/x
 ```
 
 *Alternatively, you can run it without downloading:
 ```bash
-curl -s https://raw.githubusercontent.com/aldvn/mobox/refs/heads/main/install | bash
+curl -s https://raw.githubusercontent.com/alexdvn/mobox/refs/heads/main/install | bash
 ```
 
 3. Type `mobox` in termux.
