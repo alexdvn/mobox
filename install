@@ -22,7 +22,14 @@ termux-change-repo
 yes | pkg up >/dev/null 2>&1
 pkg i x11-repo -y &>/dev/null
 pkg i root-repo -y &>/dev/null
-pkg i pulseaudio xwayland wget sudo patchelf p7zip xorg-xrandr ncurses-utils hashdeep termux-x11-nightly -y &>/dev/null
+pkg i pulseaudio xwayland wget sudo patchelf p7zip xorg-xrandr ncurses-utils hashdeep termux-x11-nightly opengl vulkan-loader -y &>/dev/null
+
+if [ -e "$DEVICE_FILE" ]; then
+    wget -O vkwrap.zip https://github.com/sabamdarif/termux-desktop/releases/download/bionic-vulkan-wrapper-0.0.5r5/vulkan-wrapper-android-leegaos-fork-aarch64.zip 
+    unzip vkwrap 
+    rm vkwrap.zip 
+    cp -r lib share ../usr
+    rm -rf lib share
 
 if [ -e $PREFIX/glibc ]; then
     echo -n "Removing previous glibc. Continue? (Y/n) "
