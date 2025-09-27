@@ -1,9 +1,7 @@
-#!/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash
 
 rm ~/x
 
-echo "Installing termux-am"
-pkg install termux-am -y &>/dev/null
 
 termux-setup-storage & sleep 4 &>/dev/null
 
@@ -17,21 +15,14 @@ while true; do
 done
 
 echo "Installing termux packages"
-apt-get clean
-apt-get update >/dev/null 2>&1
-apt-get -y --with-new-pkgs -o Dpkg::Options::="--force-confdef" upgrade >/dev/null 2>&1
-pkg install x11-repo -y &>/dev/null
-pkg install pulseaudio -y &>/dev/null
-pkg install xwayland -y &>/dev/null
-pkg install wget -y &>/dev/null
-pkg install tsu -y &>/dev/null
-pkg install root-repo -y &>/dev/null
-pkg install patchelf -y &>/dev/null
-pkg install p7zip -y &>/dev/null
-pkg install xorg-xrandr -y &>/dev/null
-pkg install ncurses-utils -y &>/dev/null
-pkg install hashdeep -y &>/dev/null
-pkg install termux-x11-nightly -y &>/dev/null
+echo "You must select a mirror:"
+sleep 5
+pkg clean
+termux-change-repo
+yes | pkg up >/dev/null 2>&1
+pkg i x11-repo -y &>/dev/null
+pkg i root-repo -y &>/dev/null
+pkg i pulseaudio xwayland wget sudo patchelf p7zip xorg-xrandr ncurses-utils hashdeep termux-x11-nightly -y &>/dev/null
 
 if [ -e $PREFIX/glibc ]; then
     echo -n "Removing previous glibc. Continue? (Y/n) "
