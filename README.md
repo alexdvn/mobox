@@ -29,7 +29,12 @@ English
 2. Open termux and paste command
 
 ```bash
-curl -s -o ~/x https://raw.githubusercontent.com/nightmare-space/mobox/refs/heads/main/install && . ~/x
+curl -s -o ~/x https://raw.githubusercontent.com/aldvn/mobox/refs/heads/main/install && . ~/x
+```
+
+*Alternatively, you can run it without downloading:
+```bash
+curl -s https://raw.githubusercontent.com/aldvn/mobox/refs/heads/main/install | bash
 ```
 
 3. Type `mobox` in termux.
@@ -69,7 +74,7 @@ To enable logging - select option 2 in Mobox -> Settings -> Debug settings menu.
 ### Android
 * `Android 10` or higher is recommended.
 ### Device
-* Most Android cellphones can run `mobox` and DirectX 9 games using Mesa VirGL.
+* Most Android cellphones can run `mobox` and DirectX 9 games using Mesa VirGL and/or Vulkan Wrapper.
 * Snapdragon device with Adreno 6xx or Adreno 725-740 is recommended to achieve best performance and compatibility with Turnip+DXVK.
 ### Root
 * Root is not required.
@@ -122,4 +127,6 @@ Big thanks to Hugo, JeezDisReez, ptitSeb, MishkaKolos, Xanzo, Jotaros, Maxython 
 [mesa-zink-11.06.22](https://github.com/alexvorxx/mesa-zink-11.06.22)
 
 [Mesa-VirGL](https://github.com/alexvorxx/Mesa-VirGL)
+
+[Mesa Vulkan Wrapper Driver](https://github.com/leegao/bionic-vulkan-wrapper)
 
