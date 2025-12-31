@@ -19,6 +19,7 @@ echo "You must select a mirror:"
 sleep 5
 pkg clean
 termux-change-repo
+Installing packages...
 yes | pkg up >/dev/null 2>&1
 pkg i x11-repo -y &>/dev/null
 pkg i tur-repo -y &>/dev/null
