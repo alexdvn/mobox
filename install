@@ -26,7 +26,7 @@ pkg i tur-repo -y &>/dev/null
 pkg i root-repo -y &>/dev/null
 pkg i pulseaudio xwayland wget sudo patchelf p7zip xorg-xrandr ncurses-utils hashdeep termux-x11-nightly osmesa-zink vulkan-loader -y &>/dev/null
 
-if [ -f "/dev/mali0" ]; then
+if [ -e "/dev/mali0" ]; then
     wget -O -q vkwrap.zip https://github.com/sabamdarif/termux-desktop/releases/download/bionic-vulkan-wrapper-0.0.5r5/vulkan-wrapper-android-leegaos-fork-aarch64.zip 
     unzip -qq vkwrap 
     rm vkwrap.zip 
