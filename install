@@ -21,12 +21,13 @@ pkg clean
 termux-change-repo
 yes | pkg up >/dev/null 2>&1
 pkg i x11-repo -y &>/dev/null
+pkg i tur-repo -y &>/dev/null
 pkg i root-repo -y &>/dev/null
-pkg i pulseaudio xwayland wget sudo patchelf p7zip xorg-xrandr ncurses-utils hashdeep termux-x11-nightly opengl vulkan-loader -y &>/dev/null
+pkg i pulseaudio xwayland wget sudo patchelf p7zip xorg-xrandr ncurses-utils hashdeep termux-x11-nightly osnesa-zink vulkan-loader -y &>/dev/null
 
-if [ -e "/dev/mali0" ]; then
-    wget -O vkwrap.zip https://github.com/sabamdarif/termux-desktop/releases/download/bionic-vulkan-wrapper-0.0.5r5/vulkan-wrapper-android-leegaos-fork-aarch64.zip 
-    unzip vkwrap 
+if [ -f "/dev/mali0" ]; then
+    wget -O -q vkwrap.zip https://github.com/sabamdarif/termux-desktop/releases/download/bionic-vulkan-wrapper-0.0.5r5/vulkan-wrapper-android-leegaos-fork-aarch64.zip 
+    unzip -qq vkwrap 
     rm vkwrap.zip 
     cp -r lib share ../usr
     rm -rf lib share
